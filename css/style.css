@@ -1,0 +1,139 @@
+body {
+    font-family: 'Zen Kaku Gothic New' , sans-serif;/*body全体のフォント*/
+    color: #ffffff;
+    background-color: #16161a;/*背景の色*/
+}
+
+header {
+    font-weight: 700;/*文字の太さ*/
+    position: absolute;/*文字の場所決め、absoluteは自由な場所にするコード*/
+    width: 100%;/*横幅の指定。%なのでbodyに対してのheaderの指定*/
+    z-index: 3;/*文字の前後を決めている、でかいほうが前*/
+}
+header .container {
+    max-width: 1080px;/*下のwidthと組み合わせて使う、基本90%まで横に広がるが1080pxは超えない*/
+    width: 90%;
+    margin: 0 auto;/*外側の余白指定で使うが、0なので余白なし、autoで横方向の中央寄せに使われている*/
+}
+header .row{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+header .logo{
+    font-size: 24px;
+}
+header ul{
+    display: flex;
+}
+header ul li {
+    margin-left: 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.section1 {
+    background-image: url(../images/image1.jpg);
+    background-position: center bottom;
+    background-size: cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.section1 .filter {
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.section1 .container {
+    width: 90%;
+    max-width: 1080px;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 2;
+    position: relative;
+}
+.section1 .heading {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #2cb67d;
+}
+.section1 h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 40px;
+} 
+.section1 .text {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+.section1 a {
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 40px 20px 40px;
+    display: inline-block;
+    background-color: #7f5af0;
+    border-radius: 6px;
+    letter-spacing: 2px;
+    transition-duration: .2s;
+}
+.section1 a:hover {
+    background-color: #2cb67d;
+}
+
+.section2 {
+    margin-bottom: 45px;
+}
+.section2 .container{
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+}
+.section2 .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transform: translateY(-48px);
+    z-index: 2;
+    position: relative;
+}
+.section2 .col {
+    background-color: #ffffff;
+    width: 32%;
+    color: #16161a;
+    padding: 20px;
+}
+.section2 img {
+    background-color: #7f5af0;
+    width: 69px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+}
+.section2 h2 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}
+.section2 hr {
+    border: solid 2px #2cb67d;
+    margin-bottom: 16px;
+    width: 48px;
+}
+
+
+
+
+
+
+
+
+
