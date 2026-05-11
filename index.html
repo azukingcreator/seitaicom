@@ -26,9 +26,9 @@
       <div class="row">
         <a href="./" class="logo">mhcom</a>
         <ul>
-          <li><a href="">About</a></li>
-          <li><a href="">News</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#news">News</a></li>
+          <li><a href="#contact">Contact</a></li>
         </ul>
      </div>
     </div>
@@ -44,7 +44,8 @@
       </div>
       <div class="filter"></div>
     </section>
-    <section class="section2">
+    
+    <section class="section2" id="survice">
       <div class="container">
         <div class="row">
           <div class="col">
@@ -69,6 +70,64 @@
       </div>
     </section>
     
+    <section class="section3" id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h2>小見出し</h2>
+            <hr>
+            <p class="text">
+            本文１<br><br>
+            本文２
+            </p>
+          </div>
+          <div class="col">
+            <img src="./images/image2.jpg" width="100%" alt="小見出し">
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="section4" id="news">
+      <div class="container">
+        <h2>NEWS</h2>
+        <hr>
+        <ul>
+            <li>
+              <p class="date">2026.05.11</p>
+              <p>web作成</p>
+            </li>
+            <li>
+              <p class="date">2026.05.11</p>
+              <p>web作成</p>
+            </li>
+            <li>
+              <p class="date">2026.05.11</p>
+              <p>web作成</p>
+            </li>
+            <li>
+              <p class="date">2026.05.11</p>
+              <p>web作成</p>
+            </li>
+          </ul>
+      </div>
+    </section>
+    
+    <section class="section5" id="contact">
+      <div class="container">
+        <h2>お問い合わせ</h2>
+        <hr>
+        <form action="./submit.php" method="post">
+          <label for="name">お名前</label>
+          <input type="text" id="name" name="name" required> 
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="email" required>
+          <label for="message">お問い合わせ</label>
+          <textarea name="message" id="message" rows="6"></textarea>
+          <input type="submit" value="送信">
+        </form>
+      </div>
+    </section>
   </main>
   
   <footer>© seitaicom Inc.</footer>
