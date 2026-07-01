@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+}
 body {
     font-family: 'Zen Kaku Gothic New' , sans-serif;/*body全体のフォント*/
     color: #ffffff;
@@ -6,13 +10,16 @@ body {
 
 header {
     font-weight: 700;/*文字の太さ*/
-    position: absolute;/*文字の場所決め、absoluteは自由な場所にするコード*/
+    position: fixed;/*文字の場所決め、absoluteは自由な場所にするコード*/
+    top: 0;
+    left: 0;
     width: 100%;/*横幅の指定。%なのでbodyに対してのheaderの指定*/
-    z-index: 3;/*文字の前後を決めている、でかいほうが前*/
+    z-index: 10;/*文字の前後を決めている、でかいほうが前*/
+    background-color: rgba(0, 0, 0, 0.7);
 }
 header .container {
-    max-width: 1080px;/*下のwidthと組み合わせて使う、基本90%まで横に広がるが1080pxは超えない*/
-    width: 90%;
+    max-width: 1100px;/*下のwidthと組み合わせて使う、基本95%まで横に広がるが1080pxは超えない*/
+    width: 95%;
     margin: 0 auto;/*外側の余白指定で使うが、0なので余白なし、autoで横方向の中央寄せに使われている*/
 }
 header .row{
@@ -22,7 +29,7 @@ header .row{
     height: 60px;
 }
 header .logo{
-    font-size: 24px;
+    font-size: 30px;
 }
 header ul{
     display: flex;
@@ -33,15 +40,118 @@ header ul li {
     letter-spacing: 1px;
 }
 
+.drawer_hidden {
+    display: none;
+}
+.drawer_open {
+    padding-top: 10px;
+    display: flex;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 13;/* 重なり順を一番上にする */
+    cursor: pointer;
+    margin-right: -20px;
+}
+.drawer_open span,
+.drawer_open span:before,
+.drawer_open span:after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 40px;
+    border-radius: 3px;
+    background: #ffffff;
+    transition: 0.5s;
+    position: absolute;
+}
+.drawer_open span:before {
+    bottom: 12px;
+}
+.drawer_open span:after {
+    top: 12px;
+}
+.drawer_overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* 60%の暗さ */
+    z-index: 11; /* メニュー(99)より下、コンテンツより上 */
+}
+#drawer_input:checked ~ header .logo {
+    color: #16161a;
+    transition: color 0.3s;
+}
+#drawer_input:checked ~ header {
+    background-color: transparent;
+    box-shadow: none;
+}
+#drawer_input:checked ~ .drawer_overlay {
+    display: block;
+}
+#drawer_input:checked ~ .drawer_open span {
+    background: rgba(255, 255, 255, 0);
+}
+#drawer_input:checked ~ .drawer_open span::before {
+    bottom: 0;
+    transform: rotate(45deg);
+    background: #000;
+}
+#drawer_input:checked ~ .drawer_open span::after {
+    top: 0;
+    transform: rotate(-45deg);
+    background: #000;
+}
+.nav_content {
+    width: 33%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 12;
+    background: #ffffff;
+    transition: .5s;
+    padding-top: 60px;
+}
+.nav_list {
+    list-style: none;
+    display: flex; /* 横並びにする */
+    flex-direction: column;
+    gap: 20px; /* 項目間の隙間 */
+    padding: 20px;
+}
+.nav_list li{
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px dashed #16161a;
+    padding: 15px 0;
+}
+.nav_list li:last-child {
+    border-bottom: none;
+}
+.nav_list a {
+    color: #16161a;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+#drawer_input:checked ~ .nav_content {
+    left: 67%;/* メニューを画面に入れる */
+}
+
 .section1 {
-    background-image: url(../images/image1.jpg);
+    background-image: url(../images/IMG_2.jpg);
     background-position: center bottom;
     background-size: cover;
     height: 100vh;
     display: flex;
     align-items: center;
 }
-
 .section1 .filter {
     width: 100%;
     height: 100%;
@@ -67,26 +177,33 @@ header ul li {
     color: #2cb67d;
 }
 .section1 h1 {
-    font-size: 48px;
+    font-size: 60px;
     font-weight: 700;
     margin-bottom: 40px;
 } 
 .section1 .text {
     font-size: 20px;
     margin-bottom: 20px;
+    color: #bcbcbc;
 }
 .section1 a {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 700;
-    padding: 16px 40px 20px 40px;
+    padding: 20px 40px;
     display: inline-block;
-    background-color: #7f5af0;
-    border-radius: 6px;
+    background-color: #06c755;
+    color: #ffffff;
+    border-radius: 50px;
     letter-spacing: 2px;
-    transition-duration: .2s;
+    transition: 0.3s;
+    text-decoration: none;
+    min-width: 210px;
+    text-align: center;
 }
 .section1 a:hover {
-    background-color: #2cb67d;
+    background-color: #1c7e19;
+    opacity: 0.8;
+    transform: translateY(-3px);
 }
 
 .section2 {
@@ -110,9 +227,11 @@ header ul li {
     width: 32%;
     color: #16161a;
     padding: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
 }
 .section2 img {
-    background-color: #7f5af0;
+    background-color: #2cb76d;
     width: 69px;
     padding: 10px;
     border-radius: 10px;
@@ -124,7 +243,7 @@ header ul li {
     margin-bottom: 16px;
 }
 .section2 hr {
-    border: solid 2px #2cb67d;
+    border: solid 2px #5a4cf1;
     margin-bottom: 16px;
     width: 48px;
 }
@@ -132,15 +251,30 @@ header ul li {
     font-size: 15px;
     line-height: 1.5;
 }
+.section2 h3 {
+    font-size: 20px;
+}
 
 .section3 {
     padding-top: 45px;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
 }
 .section3 .container {
     max-width: 1080px;
     width: 90%;
     margin: 0 auto;
+}
+.section3 h2{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section3 hr {
+    border: solid 2px #5a4cf1;
+    margin: 0 auto 40px;
+    width: 60px;
+    margin-bottom: 60px;
 }
 .section3 .row {
     display: flex;
@@ -149,27 +283,259 @@ header ul li {
     align-items: center;
     margin-bottom: 60px
 }
-.section3 .col {
+.section3 .col1 {
+    width: 46%;
+    align-self: flex-start;
+    padding-top: 20px;
+}
+.section3 .col2 {
     width: 46%;
 }
-.section3 h2 {
-    font-size: 28px;
+.section3 h3 {
+    font-size: 32px;
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-bottom: 25px;
     line-height: 1.3;
-}
-.section3 hr {
-    border: solid 2px #2cb67d;
-    margin-bottom: 20px;
-    width: 60px;
 }
 .section3 text{
     line-height: 1.5;
 }
+.section3 .link-right{
+    text-align: right;
+    margin-top: 15px;
+}
+.section3 .blue_link{
+    color: #3a3aea;
+    text-decoration: underline;
+    transition: 0.3s;
+}
+.section3 .blue_link:hover{
+    color: #252597;
+    text-decoration: none;
+}
+
+.section-flow {
+    padding-top: 45px;
+    margin-bottom: 120px;
+}
+.section-flow .container {
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+}
+.section-flow h2 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-flow hr {
+    border: solid 2px #5a4cf1;
+    margin: 0 auto 40px;
+    width: 60px;
+}
+.flow-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.flow-item {
+    background-color: #ffffff;
+    color: #16161a;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+}
+.flow-step {
+    color: #2cb76d;
+    font-size: 18px;
+    font-weight: 700;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+.flow-content h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+.flow-content p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+.flow-arrow {
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid #5a4cf1;
+    margin: 15px auto;
+}
+
+.section-price {
+    margin-bottom: 100px;
+}
+.section-price .container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+}
+.section-price h2 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-price hr {
+    border: solid 2px #5a4cf1;
+    margin: 0 auto 40px;
+    width: 60px;
+}
+.price-card {
+    background-color: #ffffff; /* 白背景 [1] */
+    color: #16161a;           /* 文字は濃い色 [1] */
+    padding: 20px;             /* section2と同じ余白 [1] */
+    border-radius: 8px;        /* 角丸 */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* 浮遊感 */
+    max-width: 800px;          /* 表が見やすい幅に設定 */
+    margin: 0 auto;            /* 中央寄せ */
+}
+.price-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.price-table th {
+    border-bottom: 2px solid #5a4cf1; /* ソース内の青色でアクセント [1-3] */
+    padding: 15px 10px;
+    font-weight: 700;
+    text-align: left;
+    color: #2cb76d; /* ソース内の緑色を見出しに [3, 4] */
+}
+.price-table td {
+    border-bottom: 1px solid #eeeeee;
+    padding: 15px 10px;
+    font-size: 16px;
+}
+.price-table .row-gap td{
+    padding-top: 10px;
+}
+.price-table tr:last-child td {
+    border-bottom: none; /* 最後の線の削除 */
+}
+.price-note {
+    font-size: 14px;
+    color: #bcbcbc; /* section1のテキストに近い色 [5] */
+    text-align: right;
+}
+
+.section-qa {
+    margin-bottom: 100px;
+}
+.section-qa h2 {
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-qa hr {
+    border: solid 2px #5a4cf1;
+    margin: 0 auto 40px;
+    width: 60px;
+    margin-bottom: 60px;
+}
+.qa-list {
+    max-width: 800px; /* section4と同じ幅 [6] */
+    margin: 0 auto;
+}
+.qa-item {
+    background-color: #ffffff; /* section2と同じ白 [1, 2] */
+    color: #16161a;            /* 文字は濃い色 [2, 4] */
+    border-radius: 8px;        /* 角丸 [1, 2] */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); /* 浮遊感 [1, 5] */
+    margin-bottom: 20px;
+    list-style: none; /* デフォルトの三角を消す */
+    cursor: pointer;
+}
+.qa-question {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    list-style: none;
+    position: relative;
+}
+.qa-question::-webkit-details-marker { 
+    display: none;
+}
+.q-letter {
+    color: #2cb76d; /* ソース内の緑色 [1, 2, 5] */
+    font-size: 40px;
+    font-weight: 700;
+    margin-right: 15px;
+}
+.qa-question p {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    padding-right: 40px;
+}
+.acc-icon{
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: translateY(-50%);
+}
+.acc-icon::before,
+.acc-icon::after {
+    content: '';
+    position: absolute;
+    background-color: #a5a5ff;
+    transition: 0.4s;
+    border-radius: 2px;
+}
+.acc-icon::before { 
+    width: 16px;
+    height: 2px;
+    top: 9px;
+    left: 2px;
+}
+.acc-icon::after {
+    width: 2px;
+    height: 16px;
+    top: 2px;
+    left: 9px;
+}
+details[open] .acc-icon::after {
+    transform: rotate(90deg);
+}
+details[open] .acc-icon::before {
+    transform: rotate(180deg);
+}
+.qa-answer {
+    display: flex;
+    padding: 0 20px 20px 20px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+}
+.a-letter {
+    color: #e53e3e; /* 回答用の赤色 */
+    font-size: 25px;
+    font-weight: 900;
+    margin-right: 18px;
+}
+.qa-answer p {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.qa-answer p span {
+    color: #e53e3e;
+    font-weight: 700;
+}
 
 .section4{
-    padding-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 100px;
 }
 .section4 .container{
     max-width: 1080px;
@@ -177,18 +543,18 @@ header ul li {
     margin: 0 auto;
 }
 .section4 h2{
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
 }
 .section4 hr{
-    border: solid 2px #2cb76d;
+    border: solid 2px #5a4cf1;
     margin: 0 auto 40px;
     width: 60px;
 }
 .section4 ul{
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
 }
 .section4 li{
@@ -197,70 +563,225 @@ header ul li {
     padding: 16px 24px;
 }
 .section4 .date{
-    color: #7f5af0;
+    color: #2cb76d;
+    font-size: 14px;
     font-weight: 500;
     letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+.section4 .row {
+    display: flex;
+    flex-wrap: wrap;
     margin-bottom: 6px;
 }
+.section4 img {
+    width: 40px;
+    align-self: center;
+}
+.section4 .comment {
+    font-size: 16px;
+    font-weight: 500;
+    align-self: flex-start;
+}
 
-.section5 {
-    padding-top: 60px;
-    margin-bottom: 130px;
+.section-access {
+    margin-bottom: 100px;
 }
-.section5 .container {
-    max-width: 1080px;
-    width: 90%;
-    margin: 0 auto;
-}
-.section5 h2 {
-    font-size: 28px;
+.section-access h2{
+    font-size: 30px;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
-.section5 hr {
-    border: solid 2px #2cb67d;
+.section-access hr{
+    border: solid 2px #5a4cf1;
     margin: 0 auto 40px;
     width: 60px;
 }
-.section5 form {
-    max-width: 540px;
+.access-card {
+    background-color: #ffffff;
+    color: #16161a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
     margin: 0 auto;
 }
-.section5 label {
+.access-note1 {
     display: block;
-    margin-bottom: 16px;
+    font-size: 13px;
+    color: #666666;
+    margin-top: 4px;
     font-weight: 500;
 }
-.section5 input, .section5 textarea {
-    background-color: #ffffff;
+.access-note2 {
     display: block;
-    width: 100%;
-    padding: 13px 16px;
-    margin-bottom: 30px;
-    color: #16161a;
+    font-size: 14px;
+    color: #666666;
+    margin-top: 4px;
+    font-weight: 500;
 }
-.section5 input[type=submit] {
-    text-align: center;
-    background-color: #7f5af0;
-    color: #ffffff;
+.access-list dt {
+    color: #2cb76d; /* ソース内の緑色 [1, 3-6] */
     font-weight: 700;
-    padding: 20px 16px 22px;
-    letter-spacing: 6px;
-    border-radius: 6px;
-    transition-duration: .2s;
+    font-size: 14px;
+    margin-bottom: 5px;
 }
-.section5 input[type=submit]:hover {
-    background-color: #2cb67d;
+.access-list dd {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+.highlight-text {
+    color: #e53e3e; /* Q&Aの赤色を流用して強調 [6] */
+    font-weight: 700;
+}
+.tel-link {
+    color: #5a4cf1; /* ソース内の青色 [1-5] */
+    font-weight: 700;
+    text-decoration: underline;
 }
 
-footer {
-    background-color: #ffffff;
+.section-contact {
+    padding-top: 10px;
+    margin-bottom: 80px;
     text-align: center;
+}
+.section-contact h2{
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.section-contact hr{
+    border: solid 2px #5a4cf1;
+    margin: 0 auto 40px;
+    width: 60px;
+}
+.contact-card {
+    background-color: #ffffff;
     color: #16161a;
-    font-size: 11px;
+    padding: 40px 20px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+}
+.contact-text {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    font-weight: 500;
+}
+.contact-text span {
+    color: #5a4cf1; /* 重要な一言に青色を適用 [5, 6] */
+    font-weight: 700;
+}
+.contact-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.btn-line {
+    background-color: #06c755;
+    color: #ffffff;
+    padding: 20px 40px;
+    border-radius: 50px; /* 丸みを持たせて押しやすく */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 18px;
+    transition: 0.3s;
+    min-width: 280px;
+}
+.btn-tel {
+    background-color: #5a4cf1;
+    color: #ffffff;
+    padding: 15px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 22px;
+    transition: 0.3s;
+    min-width: 280px;
+}
+.tel-label {
+    font-size: 12px;
+    font-weight: 500;
+}
+.btn-line:hover, .btn-tel:hover {
+    opacity: 0.8;
+    transform: translateY(-3px);
+}
+
+.pagetop {
+    text-align: center;
+    padding: 60px 0;
+}
+.pagetop a {
+    display: inline-block;
+    text-decoration: none;
+}
+.arrow-circle {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 25px;
+    transition: 0.3s;
+}
+.arrow-up {
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid rgba(255, 255, 255, 0.7);
+    border-right: 3px solid rgba(255, 255, 255, 0.7);
+    transform: rotate(-45deg); 
+    margin-top: 5px;
+}
+.pagetop p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    font-weight: 700;
     letter-spacing: 1px;
-    padding: 20px 0;
+}
+.pagetop a:hover .arrow-circle {
+    transform: translateY(-8px);
+    background-color: rgba(255, 255, 255, 0.25); /* 円を少し明るくして反応を示す */
+}
+
+.btn-back {
+    position: fixed;        /* 画面の特定位置に固定 [1] */
+    right: 20px;            /* 右端からの距離 */
+    bottom: 20px;           /* 下端からの距離 */
+    background-color: rgba(255, 255, 255, 0.15); /* pagetopと同じ半透明の白 */
+    display: flex;          /* 矢印と文字を横並びにする [1] */
+    align-items: center;    /* 上下中央に揃える [1] */
+    padding: 12px 20px;     /* 文字が入るための内側の余白 */
+    z-index: 100;           /* 重なり順を前面にする [1] */
+    border-radius: 6px;     /* 四角形（少しだけ角を丸く） */
+    text-decoration: none;  /* 下線を消す [2] */
+    transition: 0.3s;       /* 動きを滑らかにする [3] */
+}
+.arrow-back {
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid rgba(255, 255, 255, 0.7);  /* pagetopと同じ薄い白 */
+    border-left: 2px solid rgba(255, 255, 255, 0.7);
+    transform: rotate(-45deg); /* 左向きの矢印にする */
+    margin-right: 10px;        /* 文字との間隔 */
+}
+.back-text {
+    color: rgba(255, 255, 255, 0.8); /* 文字も少し薄い白にして馴染ませる */
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+.btn-back:hover {
+    background-color: rgba(255, 255, 255, 0.25); /* 少し明るくする */
+    transform: translateY(-5px); /* 他のボタンと同様に上に浮き上がらせる [3] */
+    opacity: 0.9; /* 少しだけ透け感を変えて反応を示す */
 }
 
 @media screen and (max-width: 767px) {
@@ -277,6 +798,54 @@ footer {
     .section3 .col {
         width: 100%;
         margin-bottom: 30px;
+    }
+    .nav_content {
+        width: 100%;
+    }
+    #drawer_input:checked ~ .nav_content {
+        left: 0;
+    }
+    .flow-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    .flow-step {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .price-card {
+        width: 95%;
+        padding: 15px;
+    }
+    .price-table th, .price-table td {
+        font-size: 14px;
+        padding: 10px 5px;
+    }
+    .qa-list {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .q-letter { 
+        font-size: 26px; 
+    }
+    .qa-question p {
+        font-size: 15px;
+    }
+    .access-card {
+        width: 90%;
+        padding: 20px;
+    }
+    .contact-card {
+        width: 90%; /* 左右に隙間を作る [2] */
+    }
+    .contact-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-back {
+        right: 15px;
+        bottom: 15px;
+        padding: 10px 16px;
     }
 }
 
