@@ -4,8 +4,8 @@ html {
 }
 body {
     font-family: 'Zen Kaku Gothic New' , sans-serif;/*body全体のフォント*/
-    color: #ffffff;
-    background-color: #16161a;/*背景の色*/
+    color: #16161a;
+    background-color: #c1e2f8;/*背景の色*/
 }
 
 header {
@@ -29,6 +29,7 @@ header .row{
     height: 60px;
 }
 header .logo{
+    color: #ffffff;
     font-size: 30px;
 }
 header ul{
@@ -36,7 +37,7 @@ header ul{
 }
 header ul li {
     margin-left: 30px;
-    font-size: 14px;
+    font-size: 15px;
     letter-spacing: 1px;
 }
 
@@ -138,7 +139,7 @@ header ul li {
     color: #16161a;
     text-decoration: none;
     display: block;
-    font-size: 18px;
+    font-size: 22px;
 }
 #drawer_input:checked ~ .nav_content {
     left: 67%;/* メニューを画面に入れる */
@@ -164,22 +165,16 @@ header ul li {
 }
 .section1 .container {
     width: 90%;
-    max-width: 1080px;
+    max-width: 1300px;
     margin: 0 auto;
     text-align: center;
     z-index: 2;
     position: relative;
 }
-.section1 .heading {
-    font-size: 16px;
-    font-weight: 700;
-    margin-bottom: 40px;
-    color: #2cb67d;
-}
 .section1 h1 {
+    color: #ffffff;
     font-size: 60px;
     font-weight: 700;
-    margin-bottom: 40px;
 } 
 .section1 .text {
     font-size: 20px;
@@ -187,7 +182,7 @@ header ul li {
     color: #bcbcbc;
 }
 .section1 a {
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     padding: 20px 40px;
     display: inline-block;
@@ -207,7 +202,7 @@ header ul li {
 }
 
 .section2 {
-    margin-bottom: 45px;
+    margin-bottom: 10px;
 }
 .section2 .container{
     max-width: 1080px;
@@ -238,7 +233,7 @@ header ul li {
     margin-bottom: 16px;
 }
 .section2 h2 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
     margin-bottom: 16px;
 }
@@ -248,24 +243,21 @@ header ul li {
     width: 48px;
 }
 .section2 .text {
-    font-size: 15px;
+    font-size: 22px;
     line-height: 1.5;
-}
-.section2 h3 {
-    font-size: 20px;
 }
 
 .section3 {
-    padding-top: 45px;
+    padding-top: 10px;
     margin-bottom: 80px;
 }
 .section3 .container {
-    max-width: 1080px;
+    max-width: 1300px;
     width: 90%;
     margin: 0 auto;
 }
 .section3 h2{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
@@ -279,11 +271,11 @@ header ul li {
 .section3 .row {
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
     align-items: center;
     margin-bottom: 60px
 }
 .section3 .col1 {
+    font-size: 25px;
     width: 46%;
     align-self: flex-start;
     padding-top: 20px;
@@ -291,13 +283,18 @@ header ul li {
 .section3 .col2 {
     width: 46%;
 }
+.section3 .col2 img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
 .section3 h3 {
-    font-size: 32px;
+    font-size: 35px;
     font-weight: 700;
     margin-bottom: 25px;
     line-height: 1.3;
 }
-.section3 text{
+.section3 .text{
     line-height: 1.5;
 }
 .section3 .link-right{
@@ -314,6 +311,130 @@ header ul li {
     text-decoration: none;
 }
 
+.survice {
+    padding-top: 45px;
+    margin-bottom: 80px;
+}
+.survice .container {
+    max-width: 1080px;
+    width: 90%;
+    margin: 0 auto;
+}
+.survice h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.survice hr {
+    border: solid 2px #5a4cf1;
+    margin: 0 auto 40px;
+    width: 60px;
+}
+.survice .row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.survice .imgbox {
+    width: 100%;
+}
+.imgbox img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.survice .text {
+    padding: 20px; 
+}
+.survice .text p {
+    font-size: 22px;
+    line-height: 1.8; 
+}
+
+.section-target {
+    margin-bottom: 15px;
+}
+.section-target h2 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.section-target hr {
+    border: solid 2px #5a4cf1;
+    margin: 0 auto 40px;
+    width: 60px;
+}
+.target-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.target-item {
+    background-color: #ffffff;
+    color: #16161a;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.target-summary {
+    display: flex;
+    align-items: center;
+    padding: 24px;
+    list-style: none;
+    position: relative;
+    font-weight: 700;
+    font-size: 25px;
+}
+.target-summary::-webkit-details-marker {
+    display: none;
+}
+.target-content {
+    padding: 0 24px 24px 24px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+}
+.list1 {
+    font-size: 22px;
+    list-style: none;
+    padding: 0;
+}
+.list1 > li {
+    position: relative;
+    padding-left: 1.5em; 
+    margin-bottom: 15px;
+    font-weight: 700;
+    color: #16161a;
+}
+.list1 > li::before {
+    content: '●';
+    position: absolute;
+    left: 0;
+    color: #2cb76d;
+}
+.list2 {
+    list-style: none;
+    padding-left: 1.5em;
+    margin-top: 10px;
+}
+.list2 li {
+    position: relative;
+    padding-left: 1.2em;
+    margin-bottom: 8px;
+    font-size: 18px;
+    color: #4c4c4c;
+}
+.list2 li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 8px;
+    height: 1px;
+    background-color: #5a4cf1; 
+}
+details[open] .acc-icon::after { transform: rotate(90deg); opacity: 0; }
+
 .section-flow {
     padding-top: 45px;
     margin-bottom: 120px;
@@ -324,7 +445,7 @@ header ul li {
     margin: 0 auto;
 }
 .section-flow h2 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
@@ -349,13 +470,13 @@ header ul li {
 }
 .flow-step {
     color: #2cb76d;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 700;
     margin-right: 25px;
     flex-shrink: 0;
 }
 .flow-content h3 {
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 10px;
     font-weight: 700;
 }
@@ -381,7 +502,7 @@ header ul li {
     margin: 0 auto;
 }
 .section-price h2 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
@@ -407,6 +528,7 @@ header ul li {
 .price-table th {
     border-bottom: 2px solid #5a4cf1; /* ソース内の青色でアクセント [1-3] */
     padding: 15px 10px;
+    font-size: 20px;
     font-weight: 700;
     text-align: left;
     color: #2cb76d; /* ソース内の緑色を見出しに [3, 4] */
@@ -414,7 +536,7 @@ header ul li {
 .price-table td {
     border-bottom: 1px solid #eeeeee;
     padding: 15px 10px;
-    font-size: 16px;
+    font-size: 20px;
 }
 .price-table .row-gap td{
     padding-top: 10px;
@@ -423,8 +545,8 @@ header ul li {
     border-bottom: none; /* 最後の線の削除 */
 }
 .price-note {
-    font-size: 14px;
-    color: #bcbcbc; /* section1のテキストに近い色 [5] */
+    font-size: 20px;
+    color: #3a3838; /* section1のテキストに近い色 [5] */
     text-align: right;
 }
 
@@ -432,7 +554,7 @@ header ul li {
     margin-bottom: 100px;
 }
 .section-qa h2 {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
@@ -473,7 +595,7 @@ header ul li {
     margin-right: 15px;
 }
 .qa-question p {
-    font-size: 16px;
+    font-size: 22px;
     font-weight: 700;
     margin: 0;
     padding-right: 40px;
@@ -525,7 +647,7 @@ details[open] .acc-icon::before {
     margin-right: 18px;
 }
 .qa-answer p {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.6;
 }
 
@@ -543,7 +665,7 @@ details[open] .acc-icon::before {
     margin: 0 auto;
 }
 .section4 h2{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 20px;
@@ -558,13 +680,13 @@ details[open] .acc-icon::before {
     margin: 0 auto;
 }
 .section4 li{
-    border: solid 1px #ffffff;
+    border: solid 1px #000000;
     margin-bottom: 20px;
     padding: 16px 24px;
 }
 .section4 .date{
     color: #2cb76d;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 500;
     letter-spacing: 1px;
     margin-bottom: 10px;
@@ -579,7 +701,7 @@ details[open] .acc-icon::before {
     align-self: center;
 }
 .section4 .comment {
-    font-size: 16px;
+    font-size: 20px;
     font-weight: 500;
     align-self: flex-start;
 }
@@ -588,7 +710,7 @@ details[open] .acc-icon::before {
     margin-bottom: 100px;
 }
 .section-access h2{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
@@ -604,33 +726,33 @@ details[open] .acc-icon::before {
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    max-width: 800px;
+    max-width: 1080px;
     margin: 0 auto;
+}
+.access-list dt {
+    color: #2cb76d; /* ソース内の緑色 [1, 3-6] */
+    font-weight: 700;
+    font-size: 25px;
+    margin-bottom: 5px;
+}
+.access-list dd {
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 25px;
 }
 .access-note1 {
     display: block;
-    font-size: 13px;
+    font-size: 20px;
     color: #666666;
     margin-top: 4px;
     font-weight: 500;
 }
 .access-note2 {
     display: block;
-    font-size: 14px;
+    font-size: 20px;
     color: #666666;
     margin-top: 4px;
     font-weight: 500;
-}
-.access-list dt {
-    color: #2cb76d; /* ソース内の緑色 [1, 3-6] */
-    font-weight: 700;
-    font-size: 14px;
-    margin-bottom: 5px;
-}
-.access-list dd {
-    margin-bottom: 20px;
-    line-height: 1.6;
-    font-size: 16px;
 }
 .highlight-text {
     color: #e53e3e; /* Q&Aの赤色を流用して強調 [6] */
@@ -648,7 +770,7 @@ details[open] .acc-icon::before {
     text-align: center;
 }
 .section-contact h2{
-    font-size: 30px;
+    font-size: 40px;
     font-weight: 700;
     text-align: center;
     margin-bottom: 15px;
@@ -670,6 +792,7 @@ details[open] .acc-icon::before {
 .contact-text {
     margin-bottom: 30px;
     line-height: 1.6;
+    font-size: 25px;
     font-weight: 500;
 }
 .contact-text span {
@@ -685,7 +808,7 @@ details[open] .acc-icon::before {
 .btn-line {
     background-color: #06c755;
     color: #ffffff;
-    padding: 20px 40px;
+    padding: 30px 30px;
     border-radius: 50px; /* 丸みを持たせて押しやすく */
     text-decoration: none;
     font-weight: 700;
@@ -705,7 +828,8 @@ details[open] .acc-icon::before {
     min-width: 280px;
 }
 .tel-label {
-    font-size: 12px;
+    padding: 5px 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 .btn-line:hover, .btn-tel:hover {
@@ -735,14 +859,14 @@ details[open] .acc-icon::before {
 .arrow-up {
     width: 15px;
     height: 15px;
-    border-top: 3px solid rgba(255, 255, 255, 0.7);
-    border-right: 3px solid rgba(255, 255, 255, 0.7);
+    border-top: 3px solid rgba(0, 0, 0, 0.7);
+    border-right: 3px solid rgba(0, 0, 0, 0.7);
     transform: rotate(-45deg); 
     margin-top: 5px;
 }
 .pagetop p {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 13px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -767,14 +891,14 @@ details[open] .acc-icon::before {
 .arrow-back {
     width: 8px;
     height: 8px;
-    border-top: 2px solid rgba(255, 255, 255, 0.7);  /* pagetopと同じ薄い白 */
-    border-left: 2px solid rgba(255, 255, 255, 0.7);
+    border-top: 2px solid rgba(0, 0, 0, 0.7);  /* pagetopと同じ薄い白 */
+    border-left: 2px solid rgba(0, 0, 0, 0.7);
     transform: rotate(-45deg); /* 左向きの矢印にする */
     margin-right: 10px;        /* 文字との間隔 */
 }
 .back-text {
-    color: rgba(255, 255, 255, 0.8); /* 文字も少し薄い白にして馴染ませる */
-    font-size: 13px;
+    color: rgba(0, 0, 0, 0.8); /* 文字も少し薄い白にして馴染ませる */
+    font-size: 18px;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -849,4 +973,79 @@ details[open] .acc-icon::before {
     }
 }
 
+.detail-main {
+    padding-top: 100px;
+    margin-bottom: 80px;
+}
+.detail-container {
+    max-width: 800px; 
+    width: 90%;
+    margin: 0 auto;
+}
+.intro-section h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #16161a;
+    margin-bottom: 30px;
+    text-align: center;
+}
+.content-body hr {
+    border: solid 2px #5a4cf1;
+    margin-bottom: 16px;
+    width: 48px;
+}
+.content-body h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 15px;
+    position: relative;
+}
+.content-body hr.blue-hr {
+    border: solid 2px #5a4cf1; 
+    width: 60px;
+    margin: 0 0 30px 0;
+}
+.content-body h3 {
+    font-size: 20px;
+    font-weight: 700;
+    border-left: 4px solid #2cb76d;
+    padding-left: 15px;
+    margin: 35px 0 20px;
+}
+.main{
+    text-indent: 1em;
+}
+.note {
+    font-size: 14px;
+    color: #16161a;
+}
+.detail-main p {
+    margin-bottom: 10px;
+    color: #000000;
+}
+.detail-main span.important {
+    color: #5a4cf1;
+    font-weight: 700;
+}
+.content-body h4 {
+    font-size: 18px;
+    font-weight: 700;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3); /* 30%の薄い白の点線 */
+    padding-bottom: 8px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+@media screen and (max-width: 767px) {
+    .detail-main {
+        padding-top: 80px;
+    }
+    .intro-section h1 {
+        font-size: 26px;
+    }
+    .detail-container {
+        width: 92%;
+    }
+}
 
