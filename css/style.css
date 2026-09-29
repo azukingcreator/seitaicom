@@ -3,7 +3,7 @@ html {
     scroll-padding-top: 80px;
 }
 body {
-    font-family: 'Zen Kaku Gothic New' , sans-serif;/*body全体のフォント*/
+    font-family: 'M PLUS Rounded 1c', sans-serif;/*body全体のフォント*/
     color: #16161a;
     background-color: #c1e2f8;/*背景の色*/
 }
@@ -344,12 +344,34 @@ header ul li {
     height: auto;
     display: block;
 }
-.survice .text {
-    padding: 20px; 
+.treatment {
+    background-color: #ffffff;
+    color: #16161a;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    list-style: none;
+    max-width: 800px;
+    margin: 20px auto;
 }
-.survice .text p {
-    font-size: 22px;
-    line-height: 1.8; 
+.treatment li {
+    position: relative;
+    padding-left: 1.8em;
+    margin-bottom: 15px;
+    font-size: 25px;
+    line-height: 1.6;
+    color: #16161a;
+    font-weight: 500;
+}
+.treatment li:last-child {
+    margin-bottom: 0;
+}
+.treatment li::before {
+    content: '✔';
+    position: absolute;
+    left: 0;
+    color: #2cb76d;
+    font-weight: 700;
 }
 
 .section-target {
@@ -983,7 +1005,7 @@ details[open] .acc-icon::before {
     margin: 0 auto;
 }
 .intro-section h1 {
-    font-size: 32px;
+    font-size: 40px;
     font-weight: 700;
     color: #16161a;
     margin-bottom: 30px;
@@ -995,7 +1017,7 @@ details[open] .acc-icon::before {
     width: 48px;
 }
 .content-body h2 {
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 700;
     margin-top: 50px;
     margin-bottom: 15px;
@@ -1007,17 +1029,20 @@ details[open] .acc-icon::before {
     margin: 0 0 30px 0;
 }
 .content-body h3 {
-    font-size: 20px;
+    font-size: 30px;
     font-weight: 700;
     border-left: 4px solid #2cb76d;
     padding-left: 15px;
     margin: 35px 0 20px;
 }
+.content-body p {
+    font-size: 22px;
+}
 .main{
     text-indent: 1em;
 }
 .note {
-    font-size: 14px;
+    font-size: 20px;
     color: #16161a;
 }
 .detail-main p {
@@ -1027,14 +1052,6 @@ details[open] .acc-icon::before {
 .detail-main span.important {
     color: #5a4cf1;
     font-weight: 700;
-}
-.content-body h4 {
-    font-size: 18px;
-    font-weight: 700;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.3); /* 30%の薄い白の点線 */
-    padding-bottom: 8px;
-    margin-top: 30px;
-    margin-bottom: 15px;
 }
 
 @media screen and (max-width: 767px) {
